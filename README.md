@@ -42,7 +42,6 @@ projeto_big_data/
 │     ├─ __init__.py
 │     ├─ base.py
 │     ├─ tj_rs.py
-│     ├─ tj_ma.py
 │     ├─ tj_pi.py
 │     └─ tj_to.py
 ├─ requirements.txt

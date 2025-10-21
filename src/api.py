@@ -13,7 +13,7 @@ app = FastAPI(title="API Remuneração TJs", version="0.1.0")
 
 
 class ExtractRequest(BaseModel):
-    tjs: Optional[List[str]] = None  # ex.: ["TJRS", "TJMA"]
+    tjs: Optional[List[str]] = None  # ex.: ["TJRS", "TJPI", "TJTO"]
     start: Optional[str] = None      # YYYY-MM
     end: Optional[str] = None        # YYYY-MM
 

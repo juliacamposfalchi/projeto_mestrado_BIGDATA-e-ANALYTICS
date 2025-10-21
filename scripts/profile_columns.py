@@ -13,7 +13,7 @@ import pandas as pd
 from src.utils.ingest_local import _read_excel_robust
 
 SUPPORTED_EXTS = {".csv", ".txt", ".xlsx", ".json", ".html", ".htm"}
-TARGET_TJS = {"TJMA", "TJRS", "TJPI", "TJTO"}
+TARGET_TJS = {"TJRS", "TJPI", "TJTO"}
 
 PT_MONTHS = {
     "janeiro": "01",

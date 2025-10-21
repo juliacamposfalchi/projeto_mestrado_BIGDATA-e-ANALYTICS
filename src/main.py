@@ -9,7 +9,7 @@ from src.pipeline import run_pipeline
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Pipeline de remuneração TJs")
-    ap.add_argument("--tjs", type=str, default="", help="Lista de TJs separados por vírgula (ex.: TJRS,TJMA,TJPI,TJTO). Vazio usa todos os TJs suportados neste projeto.")
+    ap.add_argument("--tjs", type=str, default="", help="Lista de TJs separados por vírgula (ex.: TJRS,TJPI,TJTO). Vazio usa todos os TJs suportados neste projeto.")
     ap.add_argument("--start", type=str, default="", help="YYYY-MM início")
     ap.add_argument("--end", type=str, default="", help="YYYY-MM fim")
     return ap.parse_args()
