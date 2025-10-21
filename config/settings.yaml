@@ -1,0 +1,14 @@
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  unified_parquet: data/processed/remuneracao_unificada.parquet
+
+period:
+  start: 2024-09
+  end: 2025-08
+
+defaults:
+  timeout: 60
+  user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36
+  retries: 3
+  backoff_factor: 0.5
