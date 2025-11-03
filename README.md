@@ -23,7 +23,7 @@ projeto_big_data/
 │  └─ processed/
 ├─ reports/
 │  ├─ template_report.md
-│  └─ output/ (gerado)
+│  └─ output/
 ├─ scripts/
 │  ├─ compute_metrics.py
 │  └─ render_report.py
@@ -47,6 +47,21 @@ projeto_big_data/
 ├─ requirements.txt
 └─ README.md
 ```
+
+## Dados e relatórios versionados
+- Este repositório inclui os dados em `data/raw/` e `data/processed/` para avaliação do trabalho.
+- As saídas geradas em `reports/output/` (incluindo `reports/output/relatorio.html`) também estão versionadas.
+
+### Como visualizar rapidamente o relatório
+- Abra diretamente o arquivo `reports/output/relatorio.html` no navegador.
+
+## Clonagem com Git LFS
+Este projeto usa Git LFS para arquivos grandes (ex.: `.csv`, `.parquet`, `.xlsx`, `.zip`). Após clonar o repositório, execute:
+```
+git lfs install
+git lfs pull
+```
+Caso Git LFS não esteja instalado, instale-o conforme a sua plataforma: https://git-lfs.com/
 
 ## Instalação
 1. Recomendado: criar um ambiente virtual (ex.: `venv`).
