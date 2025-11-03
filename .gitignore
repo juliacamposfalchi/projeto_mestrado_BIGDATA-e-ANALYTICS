@@ -18,9 +18,6 @@ Thumbs.db
 .ipynb_checkpoints/
 
 # Project data and outputs
-data/raw/
-data/processed/
-reports/output/
 
 # Logs/cache
 *.log
