@@ -70,6 +70,54 @@ Caso Git LFS não esteja instalado, instale-o conforme a sua plataforma: https:/
 pip install -r requirements.txt
 ```
 
+## Passo a passo rápido (Windows)
+- **Pasta base**: execute na raiz do projeto (`projeto_big_data`).
+- **Pré-requisito**: Python 3.10+ disponível como `py` ou `python`.
+
+1) (Opcional) Git LFS para arquivos grandes
+```
+git lfs install
+git lfs pull
+```
+
+2) Criar e ativar ambiente virtual e instalar dependências
+```
+py -m venv .venv
+.\.venv\Scripts\activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+3) Executar o pipeline (exemplo: TJRS,TJPI,TJTO entre 2024-09 e 2025-08)
+```
+python -m src.main --tjs TJRS,TJPI,TJTO --start 2024-09 --end 2025-08
+```
+Saídas: `data/raw/<TJ>/<YYYY-MM>/` e `data/processed/remuneracao_unificada.parquet`.
+
+4) Calcular métricas
+```
+python scripts\compute_metrics.py --input data\processed\remuneracao_unificada.parquet --outdir reports\output
+```
+
+5) Renderizar relatório (Markdown -> HTML)
+```
+python scripts\render_report.py --metrics_dir reports\output --template reports\template_report.md --output reports\output\relatorio.html
+```
+Abrir no navegador (opcional):
+```
+start "" reports\output\relatorio.html
+```
+
+6) Rodar o Streamlit (dashboard)
+```
+streamlit run scripts\dash_app.py --server.port 8501 --server.address 127.0.0.1
+```
+Abra: http://127.0.0.1:8501
+
+Observações:
+- Mantenha a venv ativa (`.\.venv\Scripts\activate`) ao rodar os comandos.
+- Se seu Python é `python` em vez de `py`, ajuste os comandos conforme necessário.
+
 ## Configuração
 - `config/tj_catalog.csv`: catálogo dos TJs (RS, PI, TO), com URLs de transparência, formato e observações.
 - `config/settings.yaml`: parâmetros padrão (período, caminhos de dados, etc.).
